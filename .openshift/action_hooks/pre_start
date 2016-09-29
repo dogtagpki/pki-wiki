@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rm -rf ${OPENSHIFT_REPO_DIR}images
+ln -s ${OPENSHIFT_DATA_DIR}images ${OPENSHIFT_REPO_DIR}
+
+rm -rf ${OPENSHIFT_REPO_DIR}pki
+ln -s ${OPENSHIFT_DATA_DIR}pki ${OPENSHIFT_REPO_DIR}
