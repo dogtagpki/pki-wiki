@@ -74,6 +74,20 @@ class MonoBookTemplate extends BaseTemplate {
 
 		$this->html( 'headelement' );
 ?><div id="globalWrapper">
+	<!-- move logo to top -->
+	<div class="portlet" id="p-logo" role="banner">
+		<div id="headerBackground">
+		    <div id="pageTitle">
+			<span>open source pki</span>
+		    </div>
+		</div>
+<?php
+			echo Html::element( 'a', array(
+				'href' => $this->data['nav_urls']['mainpage']['href'],
+				'style' => "background-image: url({$this->data['logopath']});" )
+				+ Linker::tooltipAndAccesskeyAttribs('p-logo') ); ?>
+
+	</div>
 <div id="column-content"><div id="content" class="mw-body-primary" role="main">
 	<a id="top"></a>
 	<?php if ( $this->data['sitenotice'] ) { ?><div id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div><?php } ?>
@@ -99,10 +113,16 @@ class MonoBookTemplate extends BaseTemplate {
 		<?php if ( $this->data['dataAfterContent'] ) { $this->html( 'dataAfterContent' ); } ?>
 		<div class="visualClear"></div>
 	</div>
-</div></div>
+</div>
+	<!-- move cactions after content -->
+	<?php $this->cactions(); ?>
+</div>
 <div id="column-one"<?php $this->html( 'userlangattributes' ) ?>>
 	<h2><?php $this->msg( 'navigation-heading' ) ?></h2>
+<!-- move cactions after content
 <?php $this->cactions(); ?>
+-->
+<!-- move personal portlet after sidebar
 	<div class="portlet" id="p-personal" role="navigation">
 		<h3><?php $this->msg( 'personaltools' ) ?></h3>
 		<div class="pBody">
@@ -114,6 +134,8 @@ class MonoBookTemplate extends BaseTemplate {
 			</ul>
 		</div>
 	</div>
+-->
+<!-- move logo to top
 	<div class="portlet" id="p-logo" role="banner">
 <?php
 			echo Html::element( 'a', array(
@@ -122,9 +144,22 @@ class MonoBookTemplate extends BaseTemplate {
 				+ Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) ); ?>
 
 	</div>
+-->
 <?php
 	$this->renderPortals( $this->data['sidebar'] );
 ?>
+	<!-- move personal portlet after sidebar -->
+	<div class="portlet" id="p-personal" role="navigation">
+		<h3><?php $this->msg('personaltools') ?></h3>
+		<div class="pBody">
+			<ul<?php $this->html('userlangattributes') ?>>
+<?php		foreach($this->getPersonalTools() as $key => $item) { ?>
+				<?php echo $this->makeListItem($key, $item); ?>
+
+<?php		} ?>
+			</ul>
+		</div>
+	</div>
 </div><!-- end of the left (by default at least) column -->
 <div class="visualClear"></div>
 <?php
@@ -206,12 +241,15 @@ echo $footerEnd;
 		global $wgUseTwoButtonsSearchForm;
 ?>
 	<div id="p-search" class="portlet" role="search">
+<!-- remove search title
 		<h3><label for="searchInput"><?php $this->msg( 'search' ) ?></label></h3>
+-->
 		<div id="searchBody" class="pBody">
 			<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
 				<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
 				<?php echo $this->makeSearchInput( array( "id" => "searchInput" ) ); ?>
 
+<!-- remove search buttons
 				<?php echo $this->makeSearchButton( "go", array( "id" => "searchGoButton", "class" => "searchButton" ) );
 				if ( $wgUseTwoButtonsSearchForm ) { ?>&#160;
 				<?php echo $this->makeSearchButton( "fulltext", array( "id" => "mw-searchButton", "class" => "searchButton" ) );
@@ -219,6 +257,7 @@ echo $footerEnd;
 
 				<div><a href="<?php $this->text( 'searchaction' ) ?>" rel="search"><?php $this->msg( 'powersearch-legend' ) ?></a></div><?php
 				} ?>
+-->
 
 			</form>
 		</div>
