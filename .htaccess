@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule "^wiki(.*)"  "index.php$1" [PT]
