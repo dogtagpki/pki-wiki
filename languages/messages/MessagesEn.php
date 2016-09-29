@@ -841,7 +841,7 @@ XHTML id names.
 'talkpage'           => 'Discuss this page',
 'talkpagelinktext'   => 'Talk',
 'specialpage'        => 'Special page',
-'personaltools'      => 'Personal tools',
+'personaltools'      => 'Account',
 'postcomment'        => 'New section',
 'addsection'         => '+', # do not translate or duplicate this message to other languages
 'articlepage'        => 'View content page',

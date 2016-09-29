@@ -16,13 +16,18 @@ div#column-content {
 	padding: 0;
 }
 div#content {
+/*
 	margin: 2.8em 0 0 12.2em;
+*/
+	margin: 0 0 0 12.2em;
 	padding: 0 1em 1em 1em;
 	position: relative;
 	z-index: 2;
 }
 div#column-one {
+/*
 	padding-top: 160px;
+*/
 }
 /* Hide, but keep accessible for screen-readers */
 #column-one h2 {
@@ -32,8 +37,11 @@ div#column-one {
 div#content {
 	background: white;
 	color: black;
+/*
 	border: 1px solid #aaa;
 	border-right: none;
+*/
+	border: none;
 	line-height: 1.5em;
 }
 /* the left column width is specified in class .portlet */
@@ -47,7 +55,9 @@ div#content {
 body {
 	font: x-small sans-serif;
 	/* @embed */
+/*
 	background: #f9f9f9 url(headbg.jpg) 0 0 no-repeat;
+*/
 	color: black;
 	margin: 0;
 	padding: 0;
@@ -227,7 +237,9 @@ table.rimage {
 	margin: 0 0 .5em;
 	padding: 0;
 	float: none;
+/*
 	width: 11.6em;
+*/
 	overflow: hidden;
 }
 .portlet h3 {
@@ -235,9 +247,12 @@ table.rimage {
 	padding: 0 1em 0 .5em;
 	display: inline;
 	height: 1em;
+/*
 	text-transform: lowercase;
 	font-size: 91%;
 	font-weight: normal;
+*/
+	font-weight: bold;
 	white-space: nowrap;
 }
 .pBody {
@@ -245,16 +260,33 @@ table.rimage {
 	background-color: white;
 	color: black;
 	border-collapse: collapse;
+/*
 	border: 1px solid #aaa;
 	padding: 0 .8em .3em .5em;
+*/
 }
 .portlet ul {
+/*
 	line-height: 1.5em;
+*/
+	line-height: .8em;
+	list-style-type: none;
+	list-style-image: none;
 	font-size: 95%;
+	margin: 0.3em 0 0 1em;
 }
 .portlet li {
 	padding: 0;
 	margin: 0;
+}
+.portlet li a {
+	display: block;
+	padding: 8px 10px;
+	text-decoration: one;
+	background: #edf2f2;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #ddd;
 }
 
 /*
@@ -262,13 +294,17 @@ table.rimage {
 */
 
 #p-logo {
+/*
 	top: 0;
 	left: 0;
-	position: absolute; /*needed to use z-index */
+	position: absolute;
 	z-index: 3;
 	height: 155px;
 	width: 12em;
+*/
 	overflow: visible;
+	padding: 3px;
+	margin: 0;
 }
 #p-logo h3 {
 	display: none;
@@ -276,11 +312,17 @@ table.rimage {
 #p-logo a,
 #p-logo a:hover {
 	display: block;
+	height: 120px;
+	width: 228px;
+/*
 	height: 155px;
 	width: 12.2em;
+*/
 	background-repeat: no-repeat;
+/*
 	background-position: 35% 50% !important;
 	text-decoration: none;
+*/
 }
 
 /*
@@ -316,12 +358,15 @@ input.searchButton {
 ** the personal toolbar
 */
 #p-personal {
+/*
 	position: absolute;
 	left: 0;
 	top: 0;
 	z-index: 0;
+*/
 }
 #p-personal {
+/*
 	width: 100%;
 	white-space: nowrap;
 	padding: 0;
@@ -330,21 +375,27 @@ input.searchButton {
 	background: none;
 	overflow: visible;
 	line-height: 1.2em;
+*/
 }
 #p-personal h3 {
+/*
 	display: none;
+*/
 }
 #p-personal .portlet,
 #p-personal .pBody {
+/*
 	z-index: 0;
 	padding: 0;
 	margin: 0;
 	border: none;
 	overflow: visible;
 	background: none;
+*/
 }
 /* this is the ul contained in the portlet */
 #p-personal ul {
+/*
 	border: none;
 	line-height: 1.4em;
 	color: #2f6fab;
@@ -356,8 +407,10 @@ input.searchButton {
 	z-index: 0;
 	background: none;
 	cursor: default;
+*/
 }
 #p-personal li {
+/*
 	z-index: 0;
 	border: none;
 	padding: 0;
@@ -366,20 +419,27 @@ input.searchButton {
 	margin-left: 1em;
 	line-height: 1.2em;
 	background: none;
+*/
 }
 #p-personal li a {
+/*
 	text-decoration: none;
 	color: #005896;
 	padding-bottom: .2em;
 	background: none;
+*/
 }
 #p-personal li a:hover {
+/*
 	background-color: white;
 	padding-bottom: .2em;
 	text-decoration: none;
+*/
 }
 #p-personal li.active a:hover {
+/*
 	background-color: transparent;
+*/
 }
 /* the icon in front of the user name, single quotes
 in bg url to hide it from iemac */
@@ -387,56 +447,97 @@ li#pt-userpage,
 li#pt-anonuserpage,
 li#pt-login {
 	/* @embed */
+/*
 	background: url(user.gif) top left no-repeat;
 	padding-left: 20px;
 	text-transform: none;
+*/
 }
 #p-personal ul {
+/*
 	text-transform: lowercase;
+*/
 }
 #p-personal li.active {
+/*
 	font-weight: bold;
+*/
 }
 /*
 ** the page-related actions- page/talk, edit etc
 */
 #p-cactions {
+	position: relative;
+/*
 	position: absolute;
 	top: 1.3em;
 	left: 11.5em;
 	margin: 0;
+*/
+	margin: 0 0 0 12.2em;
 	white-space: nowrap;
+/*
 	width: 76%;
+*/
 	line-height: 1.1em;
 	overflow: visible;
 	background: none;
 	border-collapse: collapse;
+/*
 	padding-left: 1em;
+*/
+	padding: 0 1em 1em 1em;
+	list-style: none;
+/*
 	font-size: 95%;
+*/
+	font-size: 100%;
 }
 #p-cactions ul {
 	list-style-type: none;
 	list-style-image: none;
+	margin: 0 0 0 1.5em;
+	line-height: 1.5em;
 }
 #p-cactions li {
+/*
 	display: inline;
+*/
+	display: inline-block;
+	position: relative;
+	top: -1px;
 	border: 1px solid #aaa;
+/*
 	border-bottom: none;
 	padding: 0 0 .1em 0;
+*/
+	padding: 0.3em 0.8em 0.3em 0.8em;
 	margin: 0 .3em 0 0;
 	overflow: visible;
+/*
 	background: white;
+*/
+	background-color: #dfdfdf;
 }
 #p-cactions li.selected {
+/*
 	border-color: #fabd23;
 	padding: 0 0 .2em 0;
+*/
 	font-weight: bold;
+	border-top: 1px solid #ffffff;
+	background-color: #ffffff;
 }
 #p-cactions li a {
+/*
 	background-color: #fbfbfb;
+*/
 	color: #002bb8;
 	border: none;
+/*
 	padding: 0 .8em .3em;
+*/
+	padding: 0;
 	position: relative;
 	z-index: 0;
 	margin: 0;
@@ -452,7 +553,9 @@ li#pt-login {
 #p-cactions li a:hover {
 	z-index: 3;
 	text-decoration: none;
+/*
 	background-color: white;
+*/
 }
 #p-cactions h3 {
 	display: none;
@@ -483,10 +586,15 @@ li#ca-print {
 	color: inherit;
 	border-collapse: inherit;
 	border: 0;
+/*
 	padding: 0;
+*/
+	padding: 0 1em 1em 1em;
+	border-top: 1px solid #aaa;
 }
 #p-cactions li a {
 	text-transform: lowercase;
+	background: none;
 }
 
 #p-lang {
@@ -512,8 +620,10 @@ li#ca-print {
 */
 div#footer {
 	background-color: white;
+/*
 	border-top: 1px solid #fabd23;
 	border-bottom: 1px solid #fabd23;
+*/
 	margin: .6em 0 1em 0;
 	padding: .4em 0 1.2em 0;
 	text-align: center;
@@ -691,7 +801,9 @@ div#userloginForm .captcha {
 }
 * > html #p-cactions li a {
 	border: 1px solid #aaa;
+/*
 	border-bottom: none;
+*/
 }
 * > html #p-cactions li.selected a {
 	border-color: #fabd23;
@@ -899,4 +1011,36 @@ div.mw-lag-warn-high {
 	-webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.125);
 	-moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.125);
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.125);
+}
+
+#headerBackground {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	height: 84px;
+	background-color: #5252bf;
+	z-index: -1;
+	padding: 3px;
+}
+#pageTitle {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	padding: 3px;
+	font-size: 26px;
+	font-weight: bold;
+	color: #ffffff;
+}
+#mainLinks {
+	text-align: center;
+	text-transform: lowercase;
+	text-decoration: none;
+	word-spacing: 0.5em;
+	font-size: large;
+	font-weight: bold;
+	font-style: italic;
+}
+#mainLinks a {
+	color: gray;
 }
