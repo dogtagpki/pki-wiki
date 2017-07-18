@@ -47,6 +47,8 @@ class SkinMonoBook extends SkinTemplate {
 
 		$out->addModuleStyles( 'skins.monobook' );
 
+		$out->addStyle( 'monobook/cli-demo.css', 'screen' );
+
 		// TODO: Migrate all of these
 		$out->addStyle( 'monobook/IE60Fixes.css', 'screen', 'IE 6' );
 		$out->addStyle( 'monobook/IE70Fixes.css', 'screen', 'IE 7' );
@@ -195,6 +197,8 @@ class MonoBookTemplate extends BaseTemplate {
 <?php	}
 echo $footerEnd;
 ?>
+<script type="text/javascript" src="/cli-demo.js"></script>
+<script type="text/javascript" src="/pki.js"></script>
 
 </div>
 <?php
