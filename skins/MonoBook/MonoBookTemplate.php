@@ -241,6 +241,8 @@ class MonoBookTemplate extends BaseTemplate {
 
 		echo $footerEnd;
 		?>
+		<script type="text/javascript" src="/cli-demo.js"></script>
+		<script type="text/javascript" src="/pki.js"></script>
 
 		</div>
 		<?php
