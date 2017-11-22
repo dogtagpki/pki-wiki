@@ -1,0 +1,8 @@
+#!/bin/bash
+
+. ${STI_SCRIPTS_PATH}/assemble
+
+# create links
+mv ${HOME}/images ${HOME}/images.orig
+ln -s /opt/app-root/data/images ${HOME}/images
+ln -s /opt/app-root/data/pki ${HOME}/pki
