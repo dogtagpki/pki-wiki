@@ -194,7 +194,7 @@ class MonoBookTemplate extends BaseTemplate {
 			<div id="f-<?php echo htmlspecialchars( $blockName ); ?>ico">
 				<?php foreach ( $footerIcons as $icon ) { ?>
 					<?php echo $this->getSkin()->makeFooterIcon( $icon ); ?>
-
+					<a href="https://www.openshift.com"><img src="/skins/common/images/powered_by_openshift.png"></a>
 				<?php
 }
 				?>
