@@ -140,6 +140,12 @@ $wgDefaultSkin = "monobook";
 # The following skins were automatically enabled:
 wfLoadSkin( 'MonoBook' );
 
+$wgFooterIcons['poweredby']['openshift'] = [
+        "src" => "$wgResourceBasePath/resources/assets/powered_by_openshift.png",
+        "url" => "https://www.openshift.com",
+        "height" => "48",
+        "width" => "180",
+];
 
 # End of automatically generated settings.
 # Add more configuration options below.
