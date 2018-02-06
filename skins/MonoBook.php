@@ -181,7 +181,7 @@ class MonoBookTemplate extends BaseTemplate {
 		<?php echo $this->getSkin()->makeFooterIcon( $icon ); ?>
 
 <?php }
-?>
+?>		<a href="https://www.openshift.com"><img src="/skins/common/images/powered_by_openshift.png"></a>
 	</div>
 <?php }
 
