@@ -43,6 +43,22 @@ class MonoBookTemplate extends BaseTemplate {
 
 		$this->html( 'headelement' );
 		?><div id="globalWrapper">
+		<!-- move logo to top -->
+		<div class="portlet" id="p-logo" role="banner">
+			<!-- add title -->
+			<div id="headerBackground">
+			    <div id="pageTitle">
+			        <span>open source pki</span>
+			    </div>
+			</div>
+			<?php
+			echo Html::element( 'a', array(
+					'href' => $this->data['nav_urls']['mainpage']['href'],
+					'class' => 'mw-wiki-logo',
+					)
+					+ Linker::tooltipAndAccesskeyAttribs( 'p-logo' )
+			); ?>
+		</div>
 		<div id="column-content">
 			<div id="content" class="mw-body" role="main">
 				<a id="top"></a>
@@ -110,10 +126,14 @@ class MonoBookTemplate extends BaseTemplate {
 					<div class="visualClear"></div>
 				</div>
 			</div>
+			<?php $this->cactions(); ?>
 		</div>
 		<div id="column-one"<?php $this->html( 'userlangattributes' ) ?>>
 			<h2><?php $this->msg( 'navigation-heading' ) ?></h2>
+<!-- move cactions after content
 			<?php $this->cactions(); ?>
+-->
+<!-- move personal portlet after sidebar
 			<div class="portlet" id="p-personal" role="navigation">
 				<h3><?php $this->msg( 'personaltools' ) ?></h3>
 
@@ -128,6 +148,8 @@ class MonoBookTemplate extends BaseTemplate {
 					</ul>
 				</div>
 			</div>
+-->
+<!-- move logo to top
 			<div class="portlet" id="p-logo" role="banner">
 				<?php
 				echo Html::element( 'a', array(
@@ -138,9 +160,25 @@ class MonoBookTemplate extends BaseTemplate {
 				); ?>
 
 			</div>
+-->
 			<?php
 			$this->renderPortals( $this->data['sidebar'] );
 			?>
+			<!-- move personal portlet after sidebar -->
+			<div class="portlet" id="p-personal" role="navigation">
+				<h3><?php $this->msg( 'personaltools' ) ?></h3>
+
+				<div class="pBody">
+					<ul<?php $this->html( 'userlangattributes' ) ?>>
+						<?php foreach ( $this->getPersonalTools() as $key => $item ) { ?>
+							<?php echo $this->makeListItem( $key, $item ); ?>
+
+						<?php
+}
+						?>
+					</ul>
+				</div>
+			</div>
 		</div><!-- end of the left (by default at least) column -->
 		<div class="visualClear"></div>
 		<?php
@@ -234,13 +272,14 @@ class MonoBookTemplate extends BaseTemplate {
 	function searchBox() {
 		?>
 		<div id="p-search" class="portlet" role="search">
+<!-- remove search title
 			<h3><label for="searchInput"><?php $this->msg( 'search' ) ?></label></h3>
-
+-->
 			<div id="searchBody" class="pBody">
 				<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
 					<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
 					<?php echo $this->makeSearchInput( array( "id" => "searchInput" ) ); ?>
-
+<!-- remove search buttons
 					<?php
 					echo $this->makeSearchButton(
 						"go",
@@ -260,7 +299,7 @@ class MonoBookTemplate extends BaseTemplate {
 						$this->text( 'searchaction' )
 						?>" rel="search"><?php $this->msg( 'powersearch-legend' ) ?></a></div><?php
 					} ?>
-
+-->
 				</form>
 
 				<?php $this->renderAfterPortlet( 'search' ); ?>
