@@ -147,5 +147,12 @@ $wgFooterIcons['poweredby']['openshift'] = [
         "width" => "180",
 ];
 
+$wgFooterIcons['poweredby']['jprofiler'] = [
+        "src" => "$wgResourceBasePath/resources/assets/jprofiler_small.png",
+        "url" => "https://www.ej-technologies.com/products/jprofiler/overview.html",
+        "height" => "26",
+        "width" => "92",
+];
+
 # End of automatically generated settings.
 # Add more configuration options below.
