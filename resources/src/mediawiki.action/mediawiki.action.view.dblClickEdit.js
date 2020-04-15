@@ -11,7 +11,7 @@
 				var $a = $( '#ca-edit a' );
 				// Not every page has an edit link (bug 57713)
 				if ( $a.length ) {
-					$a.get( 0 ).click();
+					// $a.get( 0 ).click();
 				}
 			}
 		} );
