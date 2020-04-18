@@ -163,5 +163,7 @@ $wgSMTP = [
     'password' => $_ENV['SMTP_PASSWORD']
 ];
 
+$wgShowExceptionDetails = true;
+
 # End of automatically generated settings.
 # Add more configuration options below.
