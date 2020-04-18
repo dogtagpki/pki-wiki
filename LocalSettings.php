@@ -154,5 +154,14 @@ $wgFooterIcons['poweredby']['jprofiler'] = [
         "width" => "92",
 ];
 
+$wgSMTP = [
+    'host'     => $_ENV['SMTP_HOST'],
+    'IDHost'   => $_ENV['SMTP_IDHOST'],
+    'port'     => intval($_ENV['SMTP_PORT']),
+    'auth'     => boolval($_ENV['SMTP_AUTH']),
+    'username' => $_ENV['SMTP_USERNAME'],
+    'password' => $_ENV['SMTP_PASSWORD']
+];
+
 # End of automatically generated settings.
 # Add more configuration options below.
